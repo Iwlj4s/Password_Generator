@@ -8,4 +8,3 @@ def generate_password(length, chars):  # Generating One Password
     return password
 
 
-

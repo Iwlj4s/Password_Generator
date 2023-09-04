@@ -5,6 +5,8 @@ import customtkinter as CTk
 from PIL import Image
 
 import random
+
+
 import password_gen
 
 
@@ -13,7 +15,7 @@ class App(CTk.CTk):
         super().__init__()
 
         # --- Window Settings --- #
-        self.geometry("600x600")
+        self.geometry("660x600")
         self.title(" --- Password Generator --- ")
         self.resizable(False, False)
 
@@ -31,7 +33,7 @@ class AppWidgets(App):
         self.password_frame.grid(row=1, column=0, padx=(20, 20), sticky="nsew")
 
         # --- Password Entry --- #
-        self.password_entry = CTk.CTkEntry(master=self.password_frame, width=330, height=90)
+        self.password_entry = CTk.CTkTextbox(master=self.password_frame, width=400, height=165)
         self.password_entry.grid(row=0, column=0, padx=(20, 20), pady=(35, 35))
 
         # -- Button For Generate Password --- #
@@ -46,28 +48,33 @@ class AppWidgets(App):
 
         # --- Slider For Number Of Passwords --- #
         self.password_number_slider_title = CTk.CTkLabel(master=self.password_settings_frame,
-                                                         text='Number Of Passwords')
-        self.password_number_slider_title.grid(row=0, column=0, pady=(5, 5))
+                                                         text='Number Of Passwords', font=("consolas", 17))
+        self.password_number_slider_title.grid(row=0, column=0, padx=(20, 10), pady=(5, 5))
 
         self.password_number_slider = CTk.CTkSlider(master=self.password_settings_frame, from_=1, to=20,
-                                                    # Adjusted from_ value
                                                     number_of_steps=20, command=self.number_passwords_event)
         self.password_number_slider.grid(row=0, column=1, columnspan=2, pady=(20, 20), sticky="ew")
 
         self.password_number_entry = CTk.CTkEntry(master=self.password_settings_frame, width=50)
-        self.password_number_entry.grid(row=0, column=3, padx=(20, 10), pady=(5, 5), sticky="we")
+        self.password_number_entry.grid(row=0, column=3, padx=(10, 60), pady=(5, 5), sticky="we")
+
+        self.password_number_slider.set(4)
+        self.password_number_entry.insert(0, 3)
 
         # --- Slider For Length Password --- #
         self.password_length_slider_title = CTk.CTkLabel(master=self.password_settings_frame,
-                                                         text='Password Length')
+                                                         text='Password Length', font=("consolas", 17))
         self.password_length_slider_title.grid(row=1, column=0, pady=(5, 5))
 
-        self.password_length_slider = CTk.CTkSlider(master=self.password_settings_frame, from_=0, to=50,
+        self.password_length_slider = CTk.CTkSlider(master=self.password_settings_frame, from_=8, to=50,
                                                     number_of_steps=100, command=self.length_slider_event)
         self.password_length_slider.grid(row=1, column=1, columnspan=3, pady=(20, 20), sticky="ew")
 
         self.password_length_entry = CTk.CTkEntry(master=self.password_settings_frame, width=50)
-        self.password_length_entry.grid(row=1, column=4, padx=(20, 10), pady=(5, 5), sticky="we")
+        self.password_length_entry.grid(row=1, column=4, padx=(10, 10), pady=(5, 5), sticky="we")
+
+        self.password_length_slider.set(12)
+        self.password_length_entry.insert(0, 12)
 
         # --- Check Boxes --- #
         self.cb_digits_var = tkinter.StringVar()
@@ -100,10 +107,18 @@ class AppWidgets(App):
         return characters
 
     def get_password(self):
-        self.password_entry.delete(0, "end")
-        self.password_entry.insert(0, password_gen.generate_password(length=int(self.password_length_slider.get()),
-                                                                     chars=self.get_characters()))
-        
+        num_passwords = int(self.password_number_slider.get())
+        passwords = []
+
+        for _ in range(num_passwords):
+            passwords.append(password_gen.generate_password(length=int(self.password_length_slider.get()),
+                                                            chars=self.get_characters()))
+
+        self.password_entry.delete("1.0", "end")
+
+        for password in passwords:
+            self.password_entry.insert("end", password + "\n")
+
     def length_slider_event(self, value):
         self.password_length_entry.delete(0, "end")
         self.password_length_entry.insert(0, int(value))
