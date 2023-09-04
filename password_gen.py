@@ -1,5 +1,4 @@
 import random
-import main
 
 
 def generate_password(length, chars):  # Generating One Password
@@ -9,5 +8,4 @@ def generate_password(length, chars):  # Generating One Password
     return password
 
 
-#for _ in range(number_of_passwords_to_generate):  # Generation Of The Required Number Of Passwords
- #   password = generate_password(password_length, chars)
+
