@@ -28,7 +28,7 @@ class AppWidgets(App):
         super().__init__()
 
         # --- Password Entry Frame --- #
-        self.password_frame = CTk.CTkFrame(master=self, fg_color="transparent")
+        self.password_frame = CTk.CTkFrame(master=self, fg_color="transparent",)
         self.password_frame.grid(row=1, column=0, padx=(20, 20), sticky="nsew")
 
         # --- Password Entry --- #
