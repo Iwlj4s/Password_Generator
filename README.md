@@ -56,7 +56,7 @@ Interface a little bit changed
 * Added explanations
 * Added second slider
 
-<img src="img_for_git/Second_version.png" alt="Logo" width="350" height="410">
+<img src="img_for_git/second_version.png" alt="Logo" width="350" height="410">
 
 <H3 id="final"> Final version </H3>
 
