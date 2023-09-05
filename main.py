@@ -14,7 +14,7 @@ class App(CTk.CTk):
         super().__init__()
 
         # --- Window Settings --- #
-        self.geometry("660x600")
+        self.geometry("660x650")
         self.title(" --- Password Generator --- ")
         self.resizable(False, False)
 
@@ -32,7 +32,7 @@ class AppWidgets(App):
         self.password_frame.grid(row=1, column=0, padx=(20, 20), sticky="nsew")
 
         # --- Password Entry --- #
-        self.password_entry = CTk.CTkTextbox(master=self.password_frame, width=440, height=165, font=("consolas", 17))
+        self.password_entry = CTk.CTkTextbox(master=self.password_frame, width=440, height=220, font=("consolas", 17))
         self.password_entry.grid(row=0, column=0, padx=(20, 20), pady=(35, 35))
 
         # -- Button For Generate Password --- #
@@ -64,7 +64,7 @@ class AppWidgets(App):
                                                          text='Password Length', font=("consolas", 17))
         self.password_length_slider_title.grid(row=1, column=0, pady=(5, 5))
 
-        self.password_length_slider = CTk.CTkSlider(master=self.password_settings_frame, from_=8, to=50,
+        self.password_length_slider = CTk.CTkSlider(master=self.password_settings_frame, from_=8, to=45,
                                                     number_of_steps=100, command=self.length_slider_event)
         self.password_length_slider.grid(row=1, column=1, columnspan=3, pady=(20, 20), sticky="ew")
 
@@ -110,17 +110,16 @@ class AppWidgets(App):
         self.password_entry.focus_force()
 
     def get_password(self):
-        num_passwords = int(self.password_number_slider.get())
-        passwords = []
+        passwords_main = []
 
         try:
-            for _ in range(num_passwords):
-                passwords.append(password_gen.generate_password(length=int(self.password_length_slider.get()),
-                                                                chars=self.get_characters()))
+            passwords_main.extend(password_gen.generate_password(length=int(self.password_length_slider.get()),
+                                                                 chars=self.get_characters(),
+                                                                 num_passwords=int(self.password_number_slider.get())))
 
             self.password_entry.delete("1.0", "end")
 
-            for password in passwords:
+            for password in passwords_main:
                 self.password_entry.insert("end", password + "\n")
 
         except Exception:
