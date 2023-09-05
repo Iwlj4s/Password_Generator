@@ -6,7 +6,6 @@ from PIL import Image
 
 import random
 
-
 import password_gen
 
 
@@ -21,7 +20,7 @@ class App(CTk.CTk):
 
         self.logo = CTk.CTkImage(dark_image=Image.open("logo.png"), size=(500, 129))
         self.logo_label = CTk.CTkLabel(master=self, text="", image=self.logo)
-        self.logo_label.grid(row=0, column=0)
+        self.logo_label.grid(row=0, column=0, pady=(15, 15))
 
 
 class AppWidgets(App):
@@ -33,13 +32,12 @@ class AppWidgets(App):
         self.password_frame.grid(row=1, column=0, padx=(20, 20), sticky="nsew")
 
         # --- Password Entry --- #
-        self.password_entry = CTk.CTkTextbox(master=self.password_frame, width=400, height=165)
+        self.password_entry = CTk.CTkTextbox(master=self.password_frame, width=440, height=165, font=("consolas", 17))
         self.password_entry.grid(row=0, column=0, padx=(20, 20), pady=(35, 35))
 
         # -- Button For Generate Password --- #
-
         self.button_for_gen_password = CTk.CTkButton(master=self.password_frame, text="Generate", width=100,
-                                                     command=self.get_password)
+                                                     command=self.get_password, font=("consolas", 17))
         self.button_for_gen_password.grid(row=0, column=1)
 
         # --- Password Settings Frame --- #
@@ -106,18 +104,27 @@ class AppWidgets(App):
 
         return characters
 
+    def get_exception(self):
+        self.password_entry.delete("1.0", "end")
+        self.password_entry.insert("end", " --- You Must Select At Least One Checkbox --- " + "\n")
+        self.password_entry.focus_force()
+
     def get_password(self):
         num_passwords = int(self.password_number_slider.get())
         passwords = []
 
-        for _ in range(num_passwords):
-            passwords.append(password_gen.generate_password(length=int(self.password_length_slider.get()),
-                                                            chars=self.get_characters()))
+        try:
+            for _ in range(num_passwords):
+                passwords.append(password_gen.generate_password(length=int(self.password_length_slider.get()),
+                                                                chars=self.get_characters()))
 
-        self.password_entry.delete("1.0", "end")
+            self.password_entry.delete("1.0", "end")
 
-        for password in passwords:
-            self.password_entry.insert("end", password + "\n")
+            for password in passwords:
+                self.password_entry.insert("end", password + "\n")
+
+        except Exception:
+            self.get_exception()
 
     def length_slider_event(self, value):
         self.password_length_entry.delete(0, "end")
