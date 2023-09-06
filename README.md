@@ -76,6 +76,6 @@ Interface a little bit changed
 
 If You want You can download it (From DropBox):
 
-> ***I will add link later***
+> ***06.09.23 Link not checked on other pc's***
 > 
-<a href="">Password Generator</a>
+<a href="https://www.dropbox.com/sh/h1dft6eb7fmf7lg/AAB4-uVJa-VuchxmxI2E2ru8a?dl=0">Password Generator</a>

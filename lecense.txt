@@ -1,0 +1,24 @@
+License Agreement for Password Generator
+
+This Password Generator software is provided for personal use only and is subject to the following license agreement:
+
+1. Ownership: The Software is the property of the author (Iwlj4s) and is protected by copyright laws and international treaty provisions.
+
+2. License Grant: The Owner grants you a personal, non-transferable, and non-exclusive license to use the Software solely for your own personal purposes.
+
+3. Restrictions: You may not sublicense, distribute, sell, lease, rent, or otherwise transfer the Software or any rights granted by this license to any third party. You may not reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software.
+
+4. No Redistribution: You are expressly prohibited from distributing, sharing, or making the Software available to third parties in any form, whether for free or for a fee.
+
+5. No Warranty: The Software is provided "as is" without any warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the Software is with you. Should the Software prove defective, you assume the cost of all necessary servicing, repair, or correction.
+
+6. Limitation of Liability: In no event shall the Owner be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this Software, even if advised of the possibility of such damage.
+
+7. Termination: This license is effective until terminated. Your rights under this license will terminate automatically without notice from the Owner if you fail to comply with any term(s) of this license. Upon termination of the license, you must cease all use of the Software and destroy all copies, full or partial, of the Software.
+
+8. Governing Law: This license shall be governed by and construed in accordance with the laws of Civil Code of the Russian Federation Article 1261.
+
+By using the Password Generator Software, you agree to be bound by the terms and conditions of this license agreement.
+
+Iwlj4s
+04 September 2023
