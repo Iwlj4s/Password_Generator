@@ -32,7 +32,7 @@ To tell you the truth, I did this project with the idea that I could use it as a
 
 And I want to say that it turned out better than I expected.
 
-<H3 id="build_with"> Build Interface With: </H3>
+<H3 id="build_with"> Build With: </H3>
 
 * <a href="https://customtkinter.tomschimansky.com/">CustomTkinter </a>
 * <a href="https://pyinstaller.org/en/stable/">PyInstaller</a>
