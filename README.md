@@ -26,13 +26,17 @@
 <H2 id="info"> General Info </H2>
 Finally I tried to separate the logic and tried to use OOP, stupid but still OOP
 
+I've also more or less figured out sane commits and pushes.
+
 To tell you the truth, I did this project with the idea that I could use it as a college project of some kind.
 
-I also want to say that it turned out better than I expected.
+And I want to say that it turned out better than I expected.
 
 <H3 id="build_with"> Build Interface With: </H3>
 
 * <a href="https://customtkinter.tomschimansky.com/">CustomTkinter </a>
+* <a href="https://pyinstaller.org/en/stable/">PyInstaller</a>
+* <a href="https://jrsoftware.org/isinfo.php">InnoSetup</a>
 
 
 <H2 id="illustration"> Illustration </H2>
