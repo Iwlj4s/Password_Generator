@@ -20,8 +20,10 @@
     <li><a href="#install">Download</a></li>
     <ul>
         <li><a href="#d_gh">From Github</a></li>
-        <li style="margin-left: 20px;"><a href="#d_gh_f">First Method</a></li>
-        <li style="margin-left: 20px;"><a href="#d_gh_s">Second Method</a></li>
+    <ul>
+      <li><a href="#d_gh_f">First Method</a></li>
+      <li><a href="#d_gh_s">Second Method</a></li>
+    </ul>
         <li><a href="#d_db">From DropBox</a></li>
       </ul>
     
