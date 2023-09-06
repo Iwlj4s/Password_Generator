@@ -56,7 +56,7 @@ Interface a little bit changed
 * Added explanations
 * Added second slider
 
-<img src="img_for_git/Second_version.png" alt="Logo" width="350" height="410">
+<img src="img_for_git/second_version.png" alt="Logo" width="350" height="410">
 
 <H3 id="final"> Final version </H3>
 
@@ -78,4 +78,6 @@ If You want You can download it (From DropBox):
 
 > ***06.09.23 Link not checked on other pc's***
 > 
+
 <a href="https://www.dropbox.com/sh/h1dft6eb7fmf7lg/AAB4-uVJa-VuchxmxI2E2ru8a?dl=0">Password Generator</a>
+
